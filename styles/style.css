@@ -1,0 +1,335 @@
+/* =========
+Reset
+========= */
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========
+Typography
+========= */
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+p {
+  line-height: 1.5;
+  word-spacing: 1px;
+}
+
+/* Header */
+
+.header {
+  color: white;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 2.625rem;
+}
+
+.nav-link, .empty-movies p {
+  font-weight: 700;
+}
+
+/* Form */
+
+.fa-magnifying-glass {
+  color: #9CA3AF; 
+}
+
+.search-input,
+.search-btn {
+  font-weight: 500;
+}
+
+.search-input {
+  color: #6B7280;
+}
+
+.search-btn {
+  color: #374151;
+}
+
+/* Movies */
+
+.empty-movies i, .empty-movies p {
+  color: #DFDDDD;
+}
+
+.empty-movies p {
+  font-size: 1.125rem;
+}
+
+.add-movies i, .add-movies p {
+  color: #363636;
+  font-size: 0.875rem;
+}
+
+.add-movies i {
+  font-size: 1rem;
+}
+
+.movie-body-title {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.movie-body-score, .movie-content-second-section {
+  font-size: 0.75rem;
+  color: #111827;
+}
+
+.movie-body-score i {
+  color: #FEC654;
+}
+
+.fa-circle-plus {
+  font-size: .9rem;
+}
+
+
+/* =========
+Layout
+========= */
+
+body {
+  height: 100vh;
+  max-height: 1000px;
+  background: #1c1c1c;
+}
+
+.container {
+  position: relative;
+  max-width: 550px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.header::before {    
+  content: "";
+  background-image: url('../images/movies-background.png');
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.20;
+}
+
+.header {
+  position: relative;  
+  padding: 82px 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.title, .nav-link {
+  z-index: 1;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Form */
+
+.search-form {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  width: 85%;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  background: white;
+}
+
+.search-form * {
+  border: none;
+}
+
+.fa-magnifying-glass, .search-input, .search-btn {
+  padding: 10px 0;
+  border-radius: 6px;
+}
+
+.fa-magnifying-glass {
+  width: 7%;
+  background: white;
+  text-align: right;
+}
+
+.search-input {
+  width: 68%;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+}
+
+.search-btn {
+  width: 25%;
+  background: #F9FAFB;
+}
+
+/* Movies */
+
+.movies {
+  flex-grow: 1;
+  background: white;
+  padding: 40px 0;
+  overflow: scroll;
+}
+
+.movies.watchlist {
+  padding: 15px 0;
+}
+
+.empty-movies {
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.fa-film {
+  font-size: 4.5rem;  
+}
+
+.add-movies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  margin-top: 17px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.movie {
+  width: 85%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+}
+
+.movie:not(:last-child) {
+  border-bottom: 1.5px solid #E5E7EB;
+}
+
+.movie-image {
+  width: 21%;
+  max-height: 147px;
+}
+
+.movie-body {
+  width: 78%;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .5em;
+}
+
+.movie-body-first-section {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.movie-content-second-section {
+  display: flex;
+  gap: 1.5em;
+}
+
+.movie-content-second-section p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.added-msg {
+  background: #111827;
+	color: white;
+	position: absolute;
+	width: 40%;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: .5em 1em;
+	border-radius: 5px;
+	opacity: 0;
+	transition: opacity 500ms ease-in;
+  text-align: center;
+}
+
+.added-msg.show {
+	opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: .8rem;
+  }
+  
+  .movie {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .movie-image {
+    width: 80px;
+  }
+  
+  .movie-body {
+    width: 100%;
+  }
+}
