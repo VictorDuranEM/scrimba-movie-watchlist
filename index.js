@@ -1,7 +1,7 @@
 import Movie from './Movie.js'
 import { trimText } from './utils.js'
 
-const baseImdbAPIUrl = 'http://www.omdbapi.com/?apikey=2597ed64'
+const baseImdbAPIUrl = 'https://www.omdbapi.com/?apikey=2597ed64'
 const moviesEl = document.getElementById('movies')
 
 const moviesInWatchlist = JSON.parse(localStorage.getItem('movies-watchlist')) || []
